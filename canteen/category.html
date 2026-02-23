@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Café – Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="loadCategoryPage()">
+
+<header>
+    <h1 id="categoryTitle">Category</h1>
+    <button class="back-btn" onclick="goHome()">⬅ Back</button>
+</header>
+
+<div class="discount-box">
+    💸 Today's Top Discounts  
+    <ul id="discountList"></ul>
+</div>
+
+<section class="items-container" id="itemsContainer"></section>
+
+<!-- Auto popup -->
+<div id="popup" class="popup"></div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Erin Canteen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="logo">🍱 Spring Cafe</div>
+    </header>
+
+    <!-- Top area: left = Add Item, right = Discount box (fixed) -->
+    <div class="top-row">
+        <div class="add-owner" id="addOwner">
+            <h2>➕ Add Item (Owner)</h2>
+            <div class="field-row">
+                <input id="itemId" type="number" placeholder="ID">
+                <input id="itemName" type="text" placeholder="Name">
+            </div>
+            <div class="field-row">
+                <input id="itemPrice" type="number" placeholder="Price (₹)">
+                <input id="itemDiscount" type="number" placeholder="Discount %">
+            </div>
+            <button class="action-btn" onclick="addItem()">Add Item</button>
+        </div>
+
+        <!-- Discount box is fixed (stays visible). Body CSS leaves room for it. -->
+        <aside id="discountBox" class="discount-box">
+            <h3>🎉 Today's Top Discounts</h3>
+            <ul id="discountList"></ul>
+            <small class="note">Discounts shown are highest first</small>
+        </aside>
+    </div>
+
+    <!-- Menu table - full width area below top row -->
+    <section class="menu-section">
+        <h2>🍜 Menu</h2>
+        <table id="menuTable" class="menu-table"></table>
+    </section>
+
+    <!-- Bottom: Bill then Favourites -->
+    <section class="bottom-row">
+        <div class="bill-box">
+            <h2>🧾 Bill</h2>
+            <table id="cartTable" class="cart-table"></table>
+            <h3 id="totalBill">Total: ₹0</h3>
+            <div class="bill-actions">
+                <button class="action-btn" onclick="clearCart()">Clear Cart</button>
+            </div>
+        </div>
+
+        <div class="favs-box">
+            <h2>❤️ Favourites</h2>
+            <ul id="favList" class="fav-list"></ul>
+        </div>
+    </section>
+
+    <!-- Custom anime alert (center) with OK button -->
+    <div id="animeAlert" class="anime-alert" aria-hidden="true">
+        <div class="alert-inner">
+            <p id="alertText" class="alert-text"></p>
+            <button id="alertOk" class="alert-ok" onclick="hideAlert()">OK</button>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

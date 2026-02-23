@@ -1,0 +1,200 @@
+/* -------------------------
+   Theme: Japanese café + soft pastel mix
+   Layout: Top-left add-owner / top-right fixed discount
+           Menu full-width below
+           Bill then favourites at bottom
+   ------------------------- */
+
+:root{
+    --pink:#FFD6E0;
+    --cream:#FFF6E6;
+    --soft-beige:#F7EDE2;
+    --pastel-blue:#D4F0FF;
+    --soft-brown:#9C7A6E;
+    --accent:#FF89A8;
+    --card:#FFFFFFCC;
+}
+
+* { box-sizing: border-box; }
+body {
+    margin:0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--pink), var(--cream), var(--pastel-blue));
+    min-height:100vh;
+    color: #403533;
+    padding: 24px;
+    /* leave space on the right so the fixed discount box won't cover content */
+    padding-right: 340px;
+}
+
+/* header */
+.app-header { text-align:center; margin-bottom: 12px; }
+.logo {
+    font-size: 34px;
+    color: #ff4f88;
+    font-weight:700;
+    text-shadow: 1px 1px white;
+}
+
+/* top row */
+.top-row {
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    margin-bottom: 18px;
+}
+
+/* Add owner box (left) */
+.add-owner {
+    background: var(--card);
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    width: 65%;
+}
+
+.add-owner h2 { margin-top:0; color:var(--soft-brown); }
+.field-row { display:flex; gap:10px; margin-bottom:8px; }
+.field-row input {
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #e6dfe0;
+    width:100%;
+    font-size:14px;
+}
+
+/* action button */
+.action-btn {
+    background: linear-gradient(180deg, var(--accent), #ff6f93);
+    color:white;
+    border:none;
+    padding:10px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* discount box (fixed top-right) */
+.discount-box {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    width: 300px;
+    background: #fffaf0;
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.12);
+    border-left: 6px solid #ffb6c1;
+    z-index: 60;
+}
+
+.discount-box h3 { margin:0 0 8px 0; color: #b04f6b; }
+.discount-box ul { margin:0; padding-left:18px; color:#403533; }
+.discount-box .note { display:block; margin-top:8px; font-size:12px; color:#6b5b55; }
+
+/* menu section */
+.menu-section { margin-bottom: 24px; }
+.menu-section h2 { color: var(--soft-brown); }
+
+.menu-table {
+    width:100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.menu-table th {
+    background: linear-gradient(90deg, #ffdfe8, #ffe8df);
+    padding:12px;
+    font-size:16px;
+    color:#6b2d3b;
+}
+.menu-table td {
+    padding:12px;
+    border-bottom: 1px solid #f3e7e8;
+    vertical-align: middle;
+    text-align: center;
+    font-size:15px;
+}
+
+/* add / fav buttons in table */
+.add-btn {
+    background: #ffb6c1;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.add-btn:hover { transform: translateY(-1px); }
+
+/* bottom row: bill and favourites */
+.bottom-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+/* bill box */
+.bill-box {
+    flex: 1 1 65%;
+    background: var(--card);
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+.cart-table { width:100%; border-collapse: collapse; margin-bottom: 8px;}
+.cart-table th, .cart-table td { padding:10px; border-bottom:1px solid #f0e9e9; text-align:left; }
+
+/* favourites box sits below bill visually, but we'll keep it as its own block */
+.favs-box {
+    flex: 1 1 30%;
+    background: var(--card);
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* favourites list */
+.fav-list { list-style: none; padding-left: 0; margin:0; }
+.fav-list li { padding:8px 0; border-bottom:1px dashed #f2e7e7; color:#5c4a46; }
+
+/* custom anime alert (center modal) */
+.anime-alert {
+    position: fixed;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(180deg,#fff3f8,#ffeef4);
+    padding: 18px 22px;
+    border-radius: 16px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.16);
+    display: none;
+    z-index: 999;
+    width: 360px;
+    text-align: center;
+}
+.alert-inner { color:#5c3a45; }
+.alert-text { font-size:16px; margin: 6px 0; }
+.alert-ok {
+    margin-top:10px;
+    background: white;
+    border: 2px solid #ff7aa0;
+    padding:8px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* small responsive */
+@media (max-width:900px){
+    body { padding-right:20px; }
+    .add-owner { width:100%; }
+    .discount-box { position: static; width:100%; margin-top:10px; }
+    .top-row { flex-direction:column; }
+    .bottom-row { flex-direction:column; }
+}
