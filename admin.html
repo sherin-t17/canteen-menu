@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin – Spring Café</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="loadAdmin()">
+
+<header>
+    <h1>🌸 Spring Café – Admin Panel 🌸</h1>
+</header>
+
+<section id="loginSection">
+    <h2>Enter PIN to Continue</h2>
+    <input type="password" id="pinInput" placeholder="PIN">
+    <button onclick="checkPin()">Login</button>
+</section>
+
+<section id="adminPanel" style="display:none;">
+    <h2>Add New Item</h2>
+
+    <label>ID:</label>
+    <input type="number" id="newId">
+
+    <label>Name:</label>
+    <input type="text" id="newName">
+
+    <label>Price:</label>
+    <input type="number" id="newPrice">
+
+    <label>Discount (%):</label>
+    <input type="number" id="newDiscount">
+
+    <label>Category:</label>
+    <select id="newCategory"></select>
+
+    <button onclick="addNewItem()">Add Item</button>
+
+    <button class="back-btn" onclick="goHome()">⬅ Back to Home</button>
+</section>
+
+<div id="popup" class="popup"></div>
+
+</body>
+</html>
